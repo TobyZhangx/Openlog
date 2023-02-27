@@ -1,4 +1,5 @@
-main.d main.o: .././main.c \
+Task3UartCommunication.d Task3UartCommunication.o: \
+ .././Task3UartCommunication.c \
  d:\atmel\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\io.h \
  d:\atmel\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\sfr_defs.h \
  d:\atmel\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\inttypes.h \
@@ -13,9 +14,7 @@ main.d main.o: .././main.c \
  d:\atmel\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\util\delay.h \
  d:\atmel\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\util\delay_basic.h \
  d:\atmel\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\math.h \
- d:\atmel\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\interrupt.h \
- .././Tool.h .././Task1TurnOnLed.h .././Task2BlinkLed.h \
- .././Task3UartCommunication.h
+ .././Tool.h .././Task3UartCommunication.h
 
 d:\atmel\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\io.h:
 
@@ -45,12 +44,6 @@ d:\atmel\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\util\delay_ba
 
 d:\atmel\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\math.h:
 
-d:\atmel\ studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include\avr\interrupt.h:
-
 .././Tool.h:
-
-.././Task1TurnOnLed.h:
-
-.././Task2BlinkLed.h:
 
 .././Task3UartCommunication.h:

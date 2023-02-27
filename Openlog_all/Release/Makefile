@@ -62,6 +62,9 @@ SUBDIRS :=  \
 C_SRCS +=  \
 ../main.c \
 ../src/ASF/common/services/clock/mega/sysclk.c \
+../Task1TurnOnLed.c \
+../Task2BlinkLed.c \
+../Task3UartCommunication.c \
 ../src/ASF/mega/boards/atmega328p_xplained_mini/init.c
 
 
@@ -74,21 +77,33 @@ ASM_SRCS +=
 OBJS +=  \
 main.o \
 src/ASF/common/services/clock/mega/sysclk.o \
+Task1TurnOnLed.o \
+Task2BlinkLed.o \
+Task3UartCommunication.o \
 src/ASF/mega/boards/atmega328p_xplained_mini/init.o
 
 OBJS_AS_ARGS +=  \
 main.o \
 src/ASF/common/services/clock/mega/sysclk.o \
+Task1TurnOnLed.o \
+Task2BlinkLed.o \
+Task3UartCommunication.o \
 src/ASF/mega/boards/atmega328p_xplained_mini/init.o
 
 C_DEPS +=  \
 main.d \
 src/ASF/common/services/clock/mega/sysclk.d \
+Task1TurnOnLed.d \
+Task2BlinkLed.d \
+Task3UartCommunication.d \
 src/ASF/mega/boards/atmega328p_xplained_mini/init.d
 
 C_DEPS_AS_ARGS +=  \
 main.d \
 src/ASF/common/services/clock/mega/sysclk.d \
+Task1TurnOnLed.d \
+Task2BlinkLed.d \
+Task3UartCommunication.d \
 src/ASF/mega/boards/atmega328p_xplained_mini/init.d
 
 OUTPUT_FILE_PATH +=Openlog_all.elf
@@ -113,6 +128,27 @@ LINKER_SCRIPT_DEP+=
 	
 
 src/ASF/common/services/clock/mega/sysclk.o: ../src/ASF/common/services/clock/mega/sysclk.c
+	@echo Building file: $<
+	@echo Invoking: AVR/GNU C Compiler : 5.4.0
+	$(QUOTE)D:\Atmel studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -DNDEBUG -DBOARD=ATMEGA328P_XPLAINED_MINI  -I"D:\Atmel studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\include" -I"../src/ASF/common/boards" -I"../src/ASF/mega/utils/preprocessor" -I"../src/ASF/mega/utils" -I"../src/ASF/common/utils" -I"../src/ASF/mega/boards" -I"../src/ASF/mega/boards/atmega328p_xplained_mini" -I"../src/ASF/common/services/gpio" -I"../src/ASF/common/services/ioport" -I"../src" -I"../src/config" -I"../src/ASF/mega/drivers/cpu" -I"../src/ASF/common/services/clock"  -Os -fdata-sections -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -Wall -mmcu=atmega328p -B "D:\Atmel studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\gcc\dev\atmega328p" -c -std=gnu99 -fno-strict-aliasing -Wstrict-prototypes -Wmissing-prototypes -Werror-implicit-function-declaration -Wpointer-arith -mrelax -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+./Task1TurnOnLed.o: .././Task1TurnOnLed.c
+	@echo Building file: $<
+	@echo Invoking: AVR/GNU C Compiler : 5.4.0
+	$(QUOTE)D:\Atmel studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -DNDEBUG -DBOARD=ATMEGA328P_XPLAINED_MINI  -I"D:\Atmel studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\include" -I"../src/ASF/common/boards" -I"../src/ASF/mega/utils/preprocessor" -I"../src/ASF/mega/utils" -I"../src/ASF/common/utils" -I"../src/ASF/mega/boards" -I"../src/ASF/mega/boards/atmega328p_xplained_mini" -I"../src/ASF/common/services/gpio" -I"../src/ASF/common/services/ioport" -I"../src" -I"../src/config" -I"../src/ASF/mega/drivers/cpu" -I"../src/ASF/common/services/clock"  -Os -fdata-sections -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -Wall -mmcu=atmega328p -B "D:\Atmel studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\gcc\dev\atmega328p" -c -std=gnu99 -fno-strict-aliasing -Wstrict-prototypes -Wmissing-prototypes -Werror-implicit-function-declaration -Wpointer-arith -mrelax -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+./Task2BlinkLed.o: .././Task2BlinkLed.c
+	@echo Building file: $<
+	@echo Invoking: AVR/GNU C Compiler : 5.4.0
+	$(QUOTE)D:\Atmel studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -DNDEBUG -DBOARD=ATMEGA328P_XPLAINED_MINI  -I"D:\Atmel studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\include" -I"../src/ASF/common/boards" -I"../src/ASF/mega/utils/preprocessor" -I"../src/ASF/mega/utils" -I"../src/ASF/common/utils" -I"../src/ASF/mega/boards" -I"../src/ASF/mega/boards/atmega328p_xplained_mini" -I"../src/ASF/common/services/gpio" -I"../src/ASF/common/services/ioport" -I"../src" -I"../src/config" -I"../src/ASF/mega/drivers/cpu" -I"../src/ASF/common/services/clock"  -Os -fdata-sections -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -Wall -mmcu=atmega328p -B "D:\Atmel studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\gcc\dev\atmega328p" -c -std=gnu99 -fno-strict-aliasing -Wstrict-prototypes -Wmissing-prototypes -Werror-implicit-function-declaration -Wpointer-arith -mrelax -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
+	@echo Finished building: $<
+	
+
+./Task3UartCommunication.o: .././Task3UartCommunication.c
 	@echo Building file: $<
 	@echo Invoking: AVR/GNU C Compiler : 5.4.0
 	$(QUOTE)D:\Atmel studio\7.0\toolchain\avr8\avr8-gnu-toolchain\bin\avr-gcc.exe$(QUOTE)  -x c -DNDEBUG -DBOARD=ATMEGA328P_XPLAINED_MINI  -I"D:\Atmel studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\include" -I"../src/ASF/common/boards" -I"../src/ASF/mega/utils/preprocessor" -I"../src/ASF/mega/utils" -I"../src/ASF/common/utils" -I"../src/ASF/mega/boards" -I"../src/ASF/mega/boards/atmega328p_xplained_mini" -I"../src/ASF/common/services/gpio" -I"../src/ASF/common/services/ioport" -I"../src" -I"../src/config" -I"../src/ASF/mega/drivers/cpu" -I"../src/ASF/common/services/clock"  -Os -fdata-sections -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -Wall -mmcu=atmega328p -B "D:\Atmel studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\gcc\dev\atmega328p" -c -std=gnu99 -fno-strict-aliasing -Wstrict-prototypes -Wmissing-prototypes -Werror-implicit-function-declaration -Wpointer-arith -mrelax -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"   -o "$@" "$<" 
