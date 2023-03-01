@@ -5,6 +5,10 @@
  * Author : tbz
  */ 
 
+#ifndef F_CPU
+#define F_CPU 16000000UL
+#endif
+
 #include <avr/io.h>
 #include <util/delay.h>
 #include <avr/interrupt.h>
@@ -12,13 +16,7 @@
 #include "Task1TurnOnLed.h"
 #include "Task2BlinkLed.h"
 #include "Task3UartCommunication.h"
-
-//#define F_CPU	16000000UL s(在util/delay.h需修改这个宏)
-
-void TurnOnD1AndD2(void);
-void BlinkLedD1_Method2(void);
-void UartCommunication(void);				
-										
+									
 int main(void)
 {
 	/* Task1: turn On D1 D2 */
@@ -29,10 +27,10 @@ int main(void)
 	//blink_led_method1(800, 500);
 	
 	//Task2Method2: use Timer1/Interrupt
-	blink_led_method2();
+	//blink_led_method2();
 	
 	/* Task3: Communication by USART */
-	//UartCommunication();
+	uart_communication();
 	
 	return 0;
 }
