@@ -38,15 +38,15 @@ void init_uart(void)
     //设为以下模式：异步、不校验、1位停止位、8位数据位
     UCSR0C |= (1<<UCSZ01)|(1<<UCSZ00);
 	
-	/*
-		波特率设置为38400，
-		按以下公式计算UBBR0
-			UBBR0 = F_CPU/(16*BaudRate) - 1
-	*/
-	UBRR0H = 0x00;
-	UBRR0L = 0x19;
+    /*
+        波特率设置为38400，
+        按以下公式计算UBBR0
+        UBBR0 = F_CPU/(16*BaudRate) - 1
+    */
+    UBRR0H = 0x00;
+    UBRR0L = 0x19;
 	
-	return;
+    return;
 }
 
 char data1 = 0xAA;
@@ -61,11 +61,11 @@ ISR(TIMER1_OVF_vect)
 
 void send_data(void)
 {
-	init_uart();//初始化UART寄存器
-	init_timer1(0x0BDB, FREQUENCY_DIVISION_256); //定时器1定时1s，计数初值设为0x0BDB, 256分频
-	SREG |= (1<<7);//开启全局中断
- 
-	while(1)
+    init_uart();//初始化UART寄存器
+    init_timer1(0x0BDB, FREQUENCY_DIVISION_256); //定时器1定时1s，计数初值设为0x0BDB, 256分频
+    SREG |= (1<<7);//开启全局中断
+
+    while(1)
     {
         if (1 == cnt1)
         { 
@@ -79,7 +79,7 @@ void send_data(void)
             cnt1 = 0;   
         }
     }
-	return;
+    return;
 }
 
 //Task3: 实现UART通信
